@@ -4,7 +4,7 @@
 // @category       Info
 // @version        0.0.1
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
-// @description    [iitc-2017-01-08-021732] show the statistics that who has deployed L8 resonators
+// @description    [iitc-2017-07-02-000000] show the statistics that who has deployed L8 resonators
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
