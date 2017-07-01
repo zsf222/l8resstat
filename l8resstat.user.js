@@ -1,10 +1,10 @@
 // ==UserScript==
 // @id             iitc-plugin-l8-res-stat@zsf222
-// @name           IITC plugin: show the statistics that who has deployed L8 resonators
+// @name           IITC plugin: L8 resonator statistics
 // @category       Info
 // @version        0.0.1
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
-// @description    [iitc-2017-01-08-021732] Display a list of all localized portals by level and faction.
+// @description    [iitc-2017-01-08-021732] show the statistics that who has deployed L8 resonators
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
@@ -124,26 +124,28 @@ window.plugin.l8resstat.getPortals = function (){
         var portal = decodeArray.portalDetail(data.result);
         try
         {
-          var name = portal.title;
+          //console.log(portal);
+          if(portal.level != 8)
+          {
+            var name = portal.title;
+            self.portal2resname[name] = [];
+            for(var j in portal.resonators)
+            {
+              var res = portal.resonators[j];
+              //console.log(res.level);
+              if(res.level == 8)
+              {
+                //console.log(res.owner);
+                if(!self.agents.includes(res.owner))
+                  self.agents.push(res.owner);
+                self.portal2resname[name].push(res.owner);
+              }
+            }
+          }
         }catch(err)
         {
           console.log(portal);
         }
-        self.portal2resname[name] = [];
-        //console.log(portal);
-        if(portal.level != 8)
-          for(var j in portal.resonators)
-          {
-            var res = portal.resonators[j];
-            //console.log(res.level);
-            if(res.level == 8)
-            {
-              //console.log(res.owner);
-              if(!self.agents.includes(res.owner))
-                self.agents.push(res.owner);
-              self.portal2resname[name].push(res.owner);
-            }
-          }
         cnt++;
         if(cnt == PortalsInRangeCount)
           self.onFinishLoadingPortalDetails();
