@@ -4,6 +4,8 @@
 // @category       Info
 // @version        0.0.2
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
+// @updateURL      https://github.com/zsf222/l8resstat/raw/master/l8resstat.meta.js
+// @downloadURL    https://github.com/zsf222/l8resstat/raw/master/l8resstat.user.js
 // @description    [iitc-2017-07-02-00001] show the statistics that who has deployed L8 resonators
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
@@ -16,8 +18,6 @@
 // @grant          none
 // ==/UserScript==
 
-// *****@updateURL      https://static.iitc.me/build/release/plugins/portal-counts.meta.js
-// *****@downloadURL    https://static.iitc.me/build/release/plugins/portal-counts.user.js
 
 
 function wrapper(plugin_info) {
@@ -65,7 +65,7 @@ window.plugin.l8resstat.onFinishLoadingPortalDetails = function(){
       if(self.portal2resname[x].includes(self.agents[i]))
         counts += "<td>O</td>";
       else
-        counts += "<td>X</td>";
+        counts += "<td>❌</td>";
     }
     counts += "</tr>";
   }
