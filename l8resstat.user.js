@@ -133,13 +133,13 @@ window.plugin.l8resstat.getPortals = function (){
             {
               var res = portal.resonators[j];
               //console.log(res.level);
-              //if(res.level == 8)
-              //{
+              if(res.level == 8)
+              {
                 //console.log(res.owner);
                 if(!self.agents.includes(res.owner))
                   self.agents.push(res.owner);
                 self.portal2resname[name].push(res.owner);
-              //}
+              }
             }
           //}
         }catch(err)
