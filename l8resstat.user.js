@@ -2,9 +2,9 @@
 // @id             iitc-plugin-l8-res-stat@zsf222
 // @name           IITC plugin: L8 resonator statistics
 // @category       Info
-// @version        0.0.1
+// @version        0.0.2
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
-// @description    [iitc-2017-07-02-000000] show the statistics that who has deployed L8 resonators
+// @description    [iitc-2017-07-02-00001] show the statistics that who has deployed L8 resonators
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
@@ -27,7 +27,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'iitc';
-plugin_info.dateTimeVersion = '20170702.21732';
+plugin_info.dateTimeVersion = '20170702.00001';
 plugin_info.pluginId = 'l8-res-stat';
 //END PLUGIN AUTHORS NOTE
 
