@@ -63,7 +63,7 @@ window.plugin.l8resstat.onFinishLoadingPortalDetails = function(){
     for(var i in self.agents)
     {
       if(self.portal2resname[x].includes(self.agents[i]))
-        counts += "<td></td>";
+        counts += "<td>O</td>";
       else
         counts += "<td>X</td>";
     }
@@ -87,7 +87,7 @@ window.plugin.l8resstat.onFinishLoadingPortalDetails = function(){
 
 //count portals for each level available on the map
 window.plugin.l8resstat.getPortals = function (){
-  if(map.getZoom()<17)
+  if(map.getZoom()<18)
   {
     if(window.useAndroidPanes()) {
       $('<div id="l8resstat" class="mobile">'
@@ -125,23 +125,23 @@ window.plugin.l8resstat.getPortals = function (){
         try
         {
           //console.log(portal);
-          if(portal.level != 8)
-          {
+          //if(portal.level != 8)
+          //{
             var name = portal.title;
             self.portal2resname[name] = [];
             for(var j in portal.resonators)
             {
               var res = portal.resonators[j];
               //console.log(res.level);
-              if(res.level == 8)
-              {
+              //if(res.level == 8)
+              //{
                 //console.log(res.owner);
                 if(!self.agents.includes(res.owner))
                   self.agents.push(res.owner);
                 self.portal2resname[name].push(res.owner);
-              }
+              //}
             }
-          }
+          //}
         }catch(err)
         {
           console.log(portal);
